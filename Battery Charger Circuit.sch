@@ -1,0 +1,322 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Battery Charger"
+Date "2020-08-30"
+Rev "HR1.00"
+Comp "PlumPot"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Battery_Management:MCP73831-2-OT U1
+U 1 1 5F4B81DE
+P 5600 3800
+F 0 "U1" H 4950 4200 50  0000 C CNN
+F 1 "MCP73831-2-OT" H 5200 4100 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 5650 3550 50  0001 L CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf" H 5450 3750 50  0001 C CNN
+	1    5600 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:USB_B_Micro J1
+U 1 1 5F4BA14B
+P 2100 4000
+F 0 "J1" H 2157 4467 50  0000 C CNN
+F 1 "USB_B_Micro" H 2157 4376 50  0000 C CNN
+F 2 "Connector_USB:USB_Micro-B_Molex-105017-0001" H 2250 3950 50  0001 C CNN
+F 3 "https://www.molex.com/molex/products/part-detail/io_connectors/1050170001" H 2250 3950 50  0001 C CNN
+	1    2100 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J2
+U 1 1 5F4BC18D
+P 9150 3700
+F 0 "J2" H 9068 3917 50  0000 C CNN
+F 1 "Conn_01x02" H 9068 3826 50  0000 C CNN
+F 2 "Connector_JST:JST_GH_SM02B-GHS-TB_1x02-1MP_P1.25mm_Horizontal" H 9150 3700 50  0001 C CNN
+F 3 "~" H 9150 3700 50  0001 C CNN
+	1    9150 3700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 3800 2700 3800
+$Comp
+L power:VBUS #PWR02
+U 1 1 5F4C0B34
+P 2700 3200
+F 0 "#PWR02" H 2700 3050 50  0001 C CNN
+F 1 "VBUS" H 2715 3373 50  0000 C CNN
+F 2 "" H 2700 3200 50  0001 C CNN
+F 3 "" H 2700 3200 50  0001 C CNN
+	1    2700 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 3200 2700 3800
+$Comp
+L power:GND #PWR01
+U 1 1 5F4C1216
+P 2100 4600
+F 0 "#PWR01" H 2100 4350 50  0001 C CNN
+F 1 "GND" H 2105 4427 50  0000 C CNN
+F 2 "" H 2100 4600 50  0001 C CNN
+F 3 "" H 2100 4600 50  0001 C CNN
+	1    2100 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 4400 2100 4500
+$Comp
+L power:VBUS #PWR05
+U 1 1 5F4C2DC6
+P 5600 3000
+F 0 "#PWR05" H 5600 2850 50  0001 C CNN
+F 1 "VBUS" H 5615 3173 50  0000 C CNN
+F 2 "" H 5600 3000 50  0001 C CNN
+F 3 "" H 5600 3000 50  0001 C CNN
+	1    5600 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 5F4C406E
+P 4600 3650
+F 0 "D1" V 4639 3533 50  0000 R CNN
+F 1 "LED" V 4548 3533 50  0000 R CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4600 3650 50  0001 C CNN
+F 3 "~" H 4600 3650 50  0001 C CNN
+	1    4600 3650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5F4C5DA8
+P 4600 4050
+F 0 "R1" H 4670 4096 50  0000 L CNN
+F 1 "470R" H 4670 4005 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4530 4050 50  0001 C CNN
+F 3 "~" H 4600 4050 50  0001 C CNN
+	1    4600 4050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 3900 4600 3800
+Wire Wire Line
+	5600 3000 5600 3300
+Wire Wire Line
+	5600 3300 4600 3300
+Wire Wire Line
+	4600 3300 4600 3500
+Connection ~ 5600 3300
+Wire Wire Line
+	5600 3300 5600 3500
+$Comp
+L power:GND #PWR06
+U 1 1 5F4C91D6
+P 5600 4550
+F 0 "#PWR06" H 5600 4300 50  0001 C CNN
+F 1 "GND" H 5605 4377 50  0000 C CNN
+F 2 "" H 5600 4550 50  0001 C CNN
+F 3 "" H 5600 4550 50  0001 C CNN
+	1    5600 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 4800 6300 4800
+Wire Wire Line
+	6300 4800 6300 3900
+Wire Wire Line
+	6300 3900 6000 3900
+Wire Wire Line
+	4600 4200 4600 4800
+Wire Wire Line
+	6000 3700 6750 3700
+$Comp
+L SparkFun-PowerSymbols:V_BATT #SUPPLY01
+U 1 1 5F4CA834
+P 6750 3300
+F 0 "#SUPPLY01" H 6800 3300 45  0001 L BNN
+F 1 "V_BATT" H 6750 3576 45  0000 C CNN
+F 2 "XXX-00000" H 6750 3481 60  0000 C CNN
+F 3 "" H 6750 3300 60  0001 C CNN
+	1    6750 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 3300 6750 3700
+Wire Wire Line
+	5200 3900 5000 3900
+Wire Wire Line
+	5000 3900 5000 4100
+$Comp
+L Device:R R2
+U 1 1 5F4CC183
+P 5000 4250
+F 0 "R2" H 5070 4296 50  0000 L CNN
+F 1 "2k" H 5070 4205 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4930 4250 50  0001 C CNN
+F 3 "~" H 5000 4250 50  0001 C CNN
+	1    5000 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 4400 5000 4450
+Wire Wire Line
+	5600 4100 5600 4450
+Wire Wire Line
+	5000 4450 5600 4450
+Wire Wire Line
+	5600 4550 5600 4450
+Connection ~ 5600 4450
+$Comp
+L Device:C_Small C1
+U 1 1 5F4CE5CB
+P 4150 3500
+F 0 "C1" H 4242 3546 50  0000 L CNN
+F 1 "4.7uF" H 4242 3455 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4150 3500 50  0001 C CNN
+F 3 "~" H 4150 3500 50  0001 C CNN
+	1    4150 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VBUS #PWR03
+U 1 1 5F4D0694
+P 4150 3300
+F 0 "#PWR03" H 4150 3150 50  0001 C CNN
+F 1 "VBUS" H 4165 3473 50  0000 C CNN
+F 2 "" H 4150 3300 50  0001 C CNN
+F 3 "" H 4150 3300 50  0001 C CNN
+	1    4150 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 3400 4150 3300
+$Comp
+L power:GND #PWR04
+U 1 1 5F4D0FA2
+P 4150 3700
+F 0 "#PWR04" H 4150 3450 50  0001 C CNN
+F 1 "GND" H 4155 3527 50  0000 C CNN
+F 2 "" H 4150 3700 50  0001 C CNN
+F 3 "" H 4150 3700 50  0001 C CNN
+	1    4150 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 3700 4150 3600
+$Comp
+L Device:C_Small C2
+U 1 1 5F4D58CF
+P 7450 3350
+F 0 "C2" H 7542 3396 50  0000 L CNN
+F 1 "4.7uF" H 7542 3305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 7450 3350 50  0001 C CNN
+F 3 "~" H 7450 3350 50  0001 C CNN
+	1    7450 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 5F4D58DC
+P 7450 3550
+F 0 "#PWR07" H 7450 3300 50  0001 C CNN
+F 1 "GND" H 7455 3377 50  0000 C CNN
+F 2 "" H 7450 3550 50  0001 C CNN
+F 3 "" H 7450 3550 50  0001 C CNN
+	1    7450 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 3550 7450 3450
+$Comp
+L SparkFun-PowerSymbols:V_BATT #SUPPLY02
+U 1 1 5F4D5EEB
+P 7450 3200
+F 0 "#SUPPLY02" H 7500 3200 45  0001 L BNN
+F 1 "V_BATT" H 7450 3476 45  0000 C CNN
+F 2 "XXX-00000" H 7450 3381 60  0000 C CNN
+F 3 "" H 7450 3200 60  0001 C CNN
+	1    7450 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 3250 7450 3200
+Wire Wire Line
+	9350 3700 9700 3700
+Wire Wire Line
+	9350 3800 9700 3800
+$Comp
+L SparkFun-PowerSymbols:V_BATT #SUPPLY03
+U 1 1 5F4D80DE
+P 9700 3350
+F 0 "#SUPPLY03" H 9750 3350 45  0001 L BNN
+F 1 "V_BATT" H 9700 3626 45  0000 C CNN
+F 2 "XXX-00000" H 9700 3531 60  0000 C CNN
+F 3 "" H 9700 3350 60  0001 C CNN
+	1    9700 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 3350 9700 3700
+$Comp
+L power:GND #PWR08
+U 1 1 5F4D9992
+P 9700 4200
+F 0 "#PWR08" H 9700 3950 50  0001 C CNN
+F 1 "GND" H 9705 4027 50  0000 C CNN
+F 2 "" H 9700 4200 50  0001 C CNN
+F 3 "" H 9700 4200 50  0001 C CNN
+	1    9700 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 3800 9700 4200
+Wire Notes Line
+	3100 2750 1100 2750
+Wire Notes Line
+	1100 2750 1100 5000
+Wire Notes Line
+	1100 5000 3100 5000
+Wire Notes Line
+	3100 5000 3100 2750
+Text Notes 1500 2950 0    50   ~ 0
+Micro USB to supply charge
+Wire Notes Line
+	3600 2700 7950 2700
+Wire Notes Line
+	7950 2700 7950 5000
+Wire Notes Line
+	7950 5000 3600 5000
+Wire Notes Line
+	3600 5000 3600 2700
+Text Notes 2250 2450 0    236  ~ 0
+MCP73831-2-OT Battery charging circuit
+Wire Notes Line
+	8250 2700 10700 2700
+Wire Notes Line
+	10700 2700 10700 5000
+Wire Notes Line
+	10700 5000 8250 5000
+Wire Notes Line
+	8250 5000 8250 2700
+Text Notes 9100 2850 0    50   ~ 0
+Battery connecctor
+Text Label 6050 3900 0    118  ~ 0
+STAT
+Wire Wire Line
+	2000 4400 2000 4500
+Wire Wire Line
+	2000 4500 2100 4500
+Connection ~ 2100 4500
+Wire Wire Line
+	2100 4500 2100 4600
+$EndSCHEMATC
